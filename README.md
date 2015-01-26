@@ -86,7 +86,7 @@ Here is a Go source file before adding `?ts=4`:
 ![After, tab space example](http://i.imgur.com/70FL4H9.png)
 
 ### Commit History by Author
-To view all commits on a repo by author add `?author=username` to the URL.
+To view all commits on a repo by author add `?author={user}` to the URL.
 
 ```
 https://github.com/rails/rails/commits/master?author=dhh
@@ -124,7 +124,7 @@ From here you can access the compare page or delete a branch with a click of a b
 To use GitHub to compare branches, change the URL to look like this:
 
 ```
-https://github.com/user/repo/compare/{range}
+https://github.com/{user}/{repo}/compare/{range}
 ```
 
 Where `{range} = master...4-1-stable`
@@ -148,7 +148,12 @@ https://github.com/rails/rails/compare/master@{2014-10-04}...master
 
 ![Another compare example](http://i.imgur.com/5dtzESz.png)
 
-...which allows you to see the difference on the master branch up a set time ago or a specified date.
+Branches can also be compared in `diff` and `patch` views:
+
+```
+https://github.com/rails/rails/compare/master...4-1-stable.diff
+https://github.com/rails/rails/compare/master...4-1-stable.patch
+```
 
 [*Read more about comparing commits across time.*](https://help.github.com/articles/comparing-commits-across-time)
 
@@ -174,7 +179,7 @@ https://github.com/rails/rails/compare/byroot:master...master
 
 Add `.pibb` to the end of any Gist URL ([like this](https://gist.github.com/tiimgreen/10545817.pibb)) in order to get the *HTML only* version suitable for embedding in any other site.
 
-Gists can be treated as a full repository so they can be cloned like any other:
+Gists can be treated as a repository so they can be cloned like any other:
 
 ```bash
 $ git clone https://gist.github.com/tiimgreen/10545817
@@ -191,7 +196,8 @@ Username for 'https://gist.github.com':
 Password for 'https://tiimgreen@gist.github.com': 
 ```
 
-[*Read more about creating gists.*](https://help.github.com/articles/creating-gists)
+However, Gists do not support directories. All files need to be added to the repository root.  
+[*Read more about creating Gists.*](https://help.github.com/articles/creating-gists)
 
 ### Git.io
 [Git.io](http://git.io) is a simple URL shortener for GitHub.
@@ -252,9 +258,9 @@ This closes the issue and references the closing commit.
 [*Read more about closing Issues via commit messages.*](https://help.github.com/articles/closing-issues-via-commit-messages)
 
 ### Cross-Link Issues
-If you want to link to another issue in the same repository, simple type hash `#` then the issue number, it will be auto-linked.
+If you want to link to another issue in the same repository, simply type hash `#` then the issue number, and it will be auto-linked.
 
-To link to an issue in another repository, `user_name/repo_name#ISSUE_NUMBER` e.g. `tiimgreen/toc#12`.
+To link to an issue in another repository, `{user}/{repo}#ISSUE_NUMBER` e.g. `tiimgreen/toc#12`.
 
 ![Cross-Link Issues](https://camo.githubusercontent.com/447e39ab8d96b553cadc8d31799100190df230a8/68747470733a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f736563726574732f7265666572656e6365732e706e67)
 
@@ -263,7 +269,7 @@ Pull Requests and Issues can now be locked by owners or collaborators of the rep
 
 ![Lock conversation](https://cloud.githubusercontent.com/assets/2723/3221693/bf54dd44-f00d-11e3-8eb6-bb51e825bc2c.png)
 
-This means that users who are not collaborators on the proejct will no longer be able to comment.
+This means that users who are not collaborators on the project will no longer be able to comment.
 
 ![Comments locked](https://cloud.githubusercontent.com/assets/2723/3221775/d6e513b0-f00e-11e3-9721-2131cb37c906.png)
 
@@ -305,7 +311,7 @@ Emojis can be added to Pull Requests, Issues, commit messages, etc. using `:name
 
 The full list of supported Emojis on GitHub can be found at [emoji-cheat-sheet.com](http://www.emoji-cheat-sheet.com/) or [scotch-io/All-Github-Emoji-Icons](https://github.com/scotch-io/All-Github-Emoji-Icons).
 
-The top 5 used Ejmojis on GitHub are:
+The top 5 used Emojis on GitHub are:
 
 1. `:shipit:`
 2. `:sparkles:`
@@ -323,7 +329,7 @@ Images and GIFs can be added to comments, READMEs etc.:
 Raw images from the repo can be used by calling them directly.:
 
 ```
-![Alt Text](https://github.com/(user)/(repo)/raw/master/path/to/image.gif)
+![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/image.gif)
 ```
 
 ![Peter don't care](http://www.sheawong.com/wp-content/uploads/2013/08/keephatin.gif)
@@ -818,6 +824,7 @@ Some useful aliases include:
 | `git st` | `git status -sb` | `git config --global alias.st 'status -sb'` |
 | `git tags` | `git tag -l` | `git config --global alias.tags 'tag -l'` |
 | `git branches` | `git branch -a` | `git config --global alias.branches 'branch -a'` |
+| `git cleanup` | `git branch --merged | grep -v '*' | xargs git branch -d` | `git config --global alias.cleanup "!git branch --merged | grep -v '*' | xargs git branch -d"` |
 | `git remotes` | `git remote -v` | `git config --global alias.remotes 'remote -v'` |
 | `git lg` | `git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --` | `git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"` |
 

@@ -1,9 +1,9 @@
 # GitHub Cheat Sheet
 A collection of cool hidden and not so hidden features of Git and GitHub. This cheat sheet was inspired by [Zach Holman](https://github.com/holman)'s [Git and GitHub Secrets](http://www.confreaks.com/videos/1229-aloharuby2012-git-and-github-secrets) talk at Aloha Ruby Conference 2012 ([slides](https://speakerdeck.com/holman/git-and-github-secrets)) and his [More Git and GitHub Secrets](https://vimeo.com/72955426) talk at WDCNZ 2013 ([slides](https://speakerdeck.com/holman/more-git-and-github-secrets)).
 
-*Shortlink: [`http://git.io/sheet`](http://git.io/sheet)*
+*Короткая ссылка: [`http://git.io/sheet`](http://git.io/sheet)*
 
-*Read this in other languages: [English](README.md), [Русский](README.ru.md), [한국어](README.ko.md), [日本語](README.ja.md), [简体中文](README.zh-cn.md).*
+*На других языках: [English](README.md), [Русский](README.ru.md), [한국어](README.ko.md), [日本語](README.ja.md), [简体中文](README.zh-cn.md).*
 
 ## Table of Contents
  - [GitHub](#github)
@@ -66,6 +66,22 @@ A collection of cool hidden and not so hidden features of Git and GitHub. This c
   - [Git Resources](#git-resources)
     - [Git Books](#git-books)
 
+## Замечания к переводу
+Некоторые термины и названия переводились следующим образом:
+| English | Русский |
+| ------- | ------- |
+| diff | изменения |
+| commit | коммит |
+| branch | ветка |
+| merge | объединить |
+| compare | сравнить |
+| pull | забирать *(изменения)* |
+| push | загружать *(изменения)* |
+| fork | форк |
+| Gist | *не переводится* |
+
+Перевод не является дословным, т.к. основная задача была — передать лишь общий смысл. Поэтому переводчик не претендует на безальтернативную точку зрения по правильности некоторых формулировок.
+
 ## GitHub
 ### Ignore Whitespace
 Добваьте `?w=1` к URL страницы при просмотре изменений, чтобы скрыть изменения только пробелов. Это позволит сконцентрироваться на коде, который был реально изменён.
@@ -86,7 +102,7 @@ A collection of cool hidden and not so hidden features of Git and GitHub. This c
 ![After, tab space example](http://i.imgur.com/70FL4H9.png)
 
 ### Commit History by Author
-Для просмотра всех коммитов в репозитории от одного автора, добавьте `?author=username` к URLa.
+Для просмотра всех коммитов в репозитории от одного автора, добавьте `?author={user}` к URLa.
 
 ```
 https://github.com/rails/rails/commits/master?author=dhh
@@ -114,22 +130,22 @@ $ git clone https://github.com/tiimgreen/github-cheat-sheet
 https://github.com/{user}/{repo}/branches
 ```
 
-... вы увидите список всех веток *(branches)*, которые не слиты *(not merged)* с главной.
+... то увидите список всех веток, которые ещё не объединены с главной.
 
-Здесь вы можете перейти к странице объединения *(compare page)* или удалить ветку, нажав на кнопку.
+Здесь вы можете перейти к странице сравнения или удалить ветку, нажав на соответсвующую кнопку.
 
 ![Compare branches not merged into master in rails/rails repo - https://github.com/rails/rails/branches](http://i.imgur.com/0FEe30z.png)
 
 #### Comparing Branches
-To use GitHub to compare branches, change the URL to look like this:
+Чтобы сравнить ветки, используя GitHub, измените URL следующим образом:
 
 ```
-https://github.com/user/repo/compare/{range}
+https://github.com/{user}/{repo}/compare/{range}
 ```
 
-Where `{range} = master...4-1-stable`
+Где `{range} = master...4-1-stable`
 
-For example:
+Например:
 
 ```
 https://github.com/rails/rails/compare/master...4-1-stable
@@ -137,29 +153,34 @@ https://github.com/rails/rails/compare/master...4-1-stable
 
 ![Rails branch compare example](http://i.imgur.com/tIRCOsK.png)
 
-`{range}` can be changed to things like:
+Также `{range}` может быть таким:
 
 ```
 https://github.com/rails/rails/compare/master@{1.day.ago}...master
 https://github.com/rails/rails/compare/master@{2014-10-04}...master
 ```
 
-*Dates are in the format `YYYY-DD-MM`*
+*Все даты в формате `YYYY-DD-MM`*
 
 ![Another compare example](http://i.imgur.com/5dtzESz.png)
 
-...which allows you to see the difference on the master branch up a set time ago or a specified date.
+Ветки также можно сравнивать в представлениях `diff` или `patch`
 
-[*Read more about comparing commits across time.*](https://help.github.com/articles/comparing-commits-across-time)
+```
+https://github.com/rails/rails/compare/master...4-1-stable.diff
+https://github.com/rails/rails/compare/master...4-1-stable.patch
+```
+
+[*Узнайте больше о сравнении коммитов за определённые периоды.*](https://help.github.com/articles/comparing-commits-across-time)
 
 #### Compare Branches across Forked Repositories
-To use GitHub to compare branches across forked repositories, change the URL to look like this:
+Чтобы сравнить ветки из различных форкнутых репозиториев, измените URL следующим образом:
 
 ```
 https://github.com/{user}/{repo}/compare/{foreign-user}:{branch}...{own-branch}
 ```
 
-For example:
+Например:
 
 ```
 https://github.com/rails/rails/compare/byroot:master...master
@@ -168,13 +189,13 @@ https://github.com/rails/rails/compare/byroot:master...master
 ![Forked branch compare](http://i.imgur.com/Q1W6qcB.png)
 
 ### Gists
-[Gists](https://gist.github.com/) are an easy way to work with small bits of code without creating a fully fledged repository.
+[Gists](https://gist.github.com/) позволяют легко работать с небольшими кусками кода без необходимости создания полноценного репозитория.
 
 ![Gist](http://i.imgur.com/VkKI1LC.png?1)
 
 Add `.pibb` to the end of any Gist URL ([like this](https://gist.github.com/tiimgreen/10545817.pibb)) in order to get the *HTML only* version suitable for embedding in any other site.
 
-Gists can be treated as a full repository so they can be cloned like any other:
+С Gist'ом можно обращаться также как и с настоящим репозиторием, поэтому его можно клонировать следующей коммандой:
 
 ```bash
 $ git clone https://gist.github.com/tiimgreen/10545817
@@ -182,7 +203,7 @@ $ git clone https://gist.github.com/tiimgreen/10545817
 
 ![Gists](http://i.imgur.com/BcFzabp.png)
 
-This means you also can modify and push updates to Gists:
+Это означает, что вы также можете редакировать и загружать изменения на сервер.
 
 ```bash
 $ git commit
@@ -191,14 +212,15 @@ Username for 'https://gist.github.com':
 Password for 'https://tiimgreen@gist.github.com': 
 ```
 
-[*Read more about creating gists.*](https://help.github.com/articles/creating-gists)
+Однако Gist не поддерживает создание каталогов — все файлы хранятся в корне репозитория.
+[*Узнайте больше о создании Gist.*](https://help.github.com/articles/creating-gists)
 
 ### Git.io
-[Git.io](http://git.io) is a simple URL shortener for GitHub.
+[Git.io](http://git.io) — это простой сокращатель ссылок на GitHub.
 
 ![Git.io](http://i.imgur.com/6JUfbcG.png?1)
 
-You can also use it via pure HTTP using Curl:
+Вы также можете использовать его с помощью чистого HTTP, используюя Curl:
 
 ```bash
 $ curl -i http://git.io -F "url=https://github.com/..."
@@ -210,7 +232,7 @@ HTTP/1.1 302 Found
 Location: https://github.com/...
 ```
 
-[*Read more about Git.io.*](https://github.com/blog/985-git-io-github-url-shortener)
+[*Узнайте больше о Git.io.*](https://github.com/blog/985-git-io-github-url-shortener)
 
 ### Keyboard Shortcuts
 When on a repository page, keyboard shortcuts allow you to navigate easily.

@@ -6,24 +6,25 @@ A collection of cool hidden and not so hidden features of Git and GitHub. This c
 
 *На других языках: [English](README.md), [Русский](README.ru.md), [한국어](README.ko.md), [日本語](README.ja.md), [简体中文](README.zh-cn.md).*
 
-## Table of Contents
+<!-- ## Table of Contents -->
+## Содержание
  - [Замечания к переводу](#замечания-к-переводу)
  - [GitHub](#github)
-  - [Ignore Whitespace](#ignore-whitespace)
-  - [Adjust Tab Space](#adjust-tab-space)
-  - [Commit History by Author](#commit-history-by-author)
-  - [Cloning a Repository](#cloning-a-repository)
-  - [Branch](#branch)
-    - [Compare all Branches to Another Branch](#compare-all-branches-to-another-branch)
-    - [Comparing Branches](#comparing-branches)
-    - [Compare Branches across Forked Repositories](#compare-branches-across-forked-repositories)
+  - [Игнорирование пробелов](#игнорирование-пробелов)
+  - [Настройка отступов](#настройка-отступов)
+  - [История коммитов от одного автора](#история-коммитов-от-одного-автора)
+  - [Клонирование репозиториев](#клонирование-репозиториев)
+  - [Ветки](#ветки)
+    - [Сравнение всех веток с другой](#сравнение-всех-веток-с-другой)
+    - [Сравнение веток](#сравнение-веток)
+    - [Сравнение веток между форками](#сравнение-веток-между-форками)
   - [Gists](#gists)
   - [Git.io](#gitio)
-  - [Keyboard Shortcuts](#keyboard-shortcuts)
-  - [Line Highlighting in Repositories](#line-highlighting-in-repositories)
-  - [Closing Issues via Commit Messages](#closing-issues-via-commit-messages)
-  - [Cross-Link Issues](#cross-link-issues)
-  - [Locking Conversations](#locking-conversations)
+  - [Быстрые клавиши](#быстрые-клавиши)
+  - [Выделение строк кода](#выделение-строк-кода)
+  - [Закрытие Issue через комментарии к коммитам](#закрытие-issue-через-комментарии-к-коммитам)
+  - [Перекрёстные ссылки на Issues](#перекрёстные-ссылки-на-issues)
+  - [Отключение обсуждений](#отключение-обсуждений)
   - [CI Status on Pull Requests](#ci-status-on-pull-requests)
   - [Syntax Highlighting in Markdown Files](#syntax-highlighting-in-markdown-files)
   - [Emojis](#emojis)
@@ -68,6 +69,7 @@ A collection of cool hidden and not so hidden features of Git and GitHub. This c
   - [Git Resources](#git-resources)
     - [Git Books](#git-books)
 
+<!-- ## Notes to translation -->
 ## Замечания к переводу
 Некоторые термины и названия переводились следующим образом:
 
@@ -89,14 +91,16 @@ A collection of cool hidden and not so hidden features of Git and GitHub. This c
 Перевод не является дословным, т.к. основная задача была — передать лишь общий смысл. Поэтому переводчик не претендует на безальтернативную точку зрения по правильности некоторых формулировок. Наоборот приветвуется всякая конструктивная критика, а ещё лучше — сделайте посильный вклад в перевод текста с английского языка.
 
 ## GitHub
-### Ignore Whitespace
+<!-- ### Ignore Whitespace -->
+### Игнорирование пробелов
 Добваьте `?w=1` к URL страницы при просмотре изменений, чтобы скрыть изменения только пробелов. Это позволит сконцентрироваться на коде, который был реально изменён.
 
 ![Diff without whitespace](https://camo.githubusercontent.com/797184940defadec00393e6559b835358a863eeb/68747470733a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f736563726574732f776869746573706163652e706e67)
 
 [*Узнайте больше о секретах GitHub.*](https://github.com/blog/967-github-secrets)
 
-### Adjust Tab Space
+<!-- ### Adjust Tab Space -->
+### Настройка отступов
 Добавьте `?ts=4` к URL страницы при просмотре кода или изменений, чтобы задать собственную ширину табуляции. По умолчанию ширина установлена в 8 пробелов. Число после `ts` может быть изменено с учётом ваших предпочтений. Это не работает с Gists и сырыми файлами, но вы можете установить [расширение](https://chrome.google.com/webstore/detail/github-tab-size/ofjbgncegkdemndciafljngjbdpfmbkn) для Chrome чтобы исправить это.
 
 Так выгдядит исходный файл без `?ts=4`:
@@ -107,7 +111,8 @@ A collection of cool hidden and not so hidden features of Git and GitHub. This c
 
 ![After, tab space example](http://i.imgur.com/70FL4H9.png)
 
-### Commit History by Author
+<!-- ### Commit History by Author -->
+### История коммитов от одного автора
 Для просмотра в репозитории всех коммитов от одного автора, добавьте `?author={user}` к URL.
 
 ```
@@ -118,7 +123,8 @@ https://github.com/rails/rails/commits/master?author=dhh
 
 [*Узнайте больше о различиях в представлении коммитов.*](https://help.github.com/articles/differences-between-commit-views)
 
-### Cloning a Repository
+<!-- ### Cloning a Repository -->
+### Клонирование репозиториев
 При клонировании репозитория `.git` в конце можно опустить.
 
 ```bash
@@ -127,8 +133,10 @@ $ git clone https://github.com/tiimgreen/github-cheat-sheet
 
 [*Узнайте больше о команде Git `clone`.*](http://git-scm.com/docs/git-clone)
 
-###Branch
-#### Compare all Branches to Another Branch
+<!-- ###Branch -->
+### Ветки
+<!-- #### Compare all Branches to Another Branch -->
+#### Сравнение всех веток с другой
 
 Если вы перейдёте на страницу [Branches](https://github.com/tiimgreen/github-cheat-sheet/branches), ссылка на которую находится рядом с кнопкой Commits:
 
@@ -142,7 +150,8 @@ https://github.com/{user}/{repo}/branches
 
 ![Compare branches not merged into master in rails/rails repo - https://github.com/rails/rails/branches](http://i.imgur.com/0FEe30z.png)
 
-#### Comparing Branches
+<!-- #### Comparing Branches -->
+#### Сравнение веток
 Чтобы сравнить ветки, используя GitHub, измените URL следующим образом:
 
 ```
@@ -179,7 +188,8 @@ https://github.com/rails/rails/compare/master...4-1-stable.patch
 
 [*Узнайте больше о сравнении коммитов за определённые периоды.*](https://help.github.com/articles/comparing-commits-across-time)
 
-#### Compare Branches across Forked Repositories
+<!-- #### Compare Branches across Forked Repositories -->
+#### Сравнение веток между форками
 Чтобы сравнить ветки из различных форкнутых репозиториев, измените URL следующим образом:
 
 ```
@@ -240,7 +250,8 @@ Location: https://github.com/...
 
 [*Узнайте больше о Git.io.*](https://github.com/blog/985-git-io-github-url-shortener)
 
-### Keyboard Shortcuts
+<!-- ### Keyboard Shortcuts -->
+### Быстрые клавиши
 Когда вы находитесь в репозитории, *быстрые клавиши* позволют лекго перемещаться по коду.
 
  - Нажмите `t`, чтобы открыть файловый менеджер.
@@ -255,7 +266,8 @@ Location: https://github.com/...
 
 [*Узнайте больше об использовании командной строки.*](https://help.github.com/articles/using-the-command-bar)
 
-### Line Highlighting in Repositories
+<!-- ### Line Highlighting in Repositories -->
+### Выделение строк кода
 Либо добавьте `#L52` в конец URL страницы с кодом, либо просто щёлкните на номер строки, чтобы выделить строку с этим номером.
 
 Это работает также и с диапазонами, например, `#L53-L60`. Чтобы выбрать диапазон, щёлкните на двух строчках, удерживая `Shift`:
@@ -266,7 +278,8 @@ https://github.com/rails/rails/blob/master/activemodel/lib/active_model.rb#L53-L
 
 ![Line Highlighting](http://i.imgur.com/8AhjrCz.png)
 
-### Closing Issues via Commit Messages
+<!-- ### Closing Issues via Commit Messages -->
+### Закрытие Issue через комментарии к коммитам
 Иногда коммиты могут исправлять некоторые Issue. Ключевые слова `fix/fixes/fixed`, `close/closes/closed` или `resolve/resolves/resolved`, за которыми следует номер Issue, закрывают соответсвующий Issue, если они были в комментарии к коммиту в ветке `master`.
 
 ```bash
@@ -280,23 +293,25 @@ This closes the issue and references the closing commit.
 [*Узнайте больше о закрытии Issue через комментарии к коммитам.*](https://help.github.com/articles/closing-issues-via-commit-messages)
 [*Read more about closing Issues via commit messages.*](https://help.github.com/articles/closing-issues-via-commit-messages)
 
-### Cross-Link Issues
+<!-- ### Cross-Link Issues -->
+### Перекрёстные ссылки на Issues
 Если вы хотите прикрепить ссылку на другой Issue в том же самом репозитории, просто напишите номер этого Issue, предварив его решёткой `#`.
 
 Чтобы прикрепить ссылку на Issue в другом репозитории, напишите `{user}/{repo}#ISSUE_NUMBER`, например, `tiimgreen/toc#12`.
 
 ![Cross-Link Issues](https://camo.githubusercontent.com/447e39ab8d96b553cadc8d31799100190df230a8/68747470733a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f736563726574732f7265666572656e6365732e706e67)
 
-### Locking Conversations
-Комментирование запросов на изменение и Issue может быть выключено владельцем репозитория или его помощниками.
+<!-- ### Locking Conversations -->
+### Отключение обсуждений
+Обсуждение запросов на изменение и Issue может быть выключено владельцем репозитория или его помощниками.
 
 ![Lock conversation](https://cloud.githubusercontent.com/assets/2723/3221693/bf54dd44-f00d-11e3-8eb6-bb51e825bc2c.png)
 
-Это означает, что непривелигированные пользователи больше не смогут оствалять комментарии.
+Это означает, что непривелигированные пользователи больше не смогут оствалять комментарии в обсуждениях этого репозитория.
 
 ![Comments locked](https://cloud.githubusercontent.com/assets/2723/3221775/d6e513b0-f00e-11e3-9721-2131cb37c906.png)
 
-[*Узнайте больше о выключении комментариев.*](https://github.com/blog/1847-locking-conversations)
+[*Узнайте больше о выключении обсуждений.*](https://github.com/blog/1847-locking-conversations)
 
 ### CI Status on Pull Requests
 If set up correctly, every time you receive a Pull Request, [Travis CI](https://travis-ci.org/) will build that Pull Request just like it would every time you make a new commit. Read more about how to [get started with Travis CI](http://docs.travis-ci.com/user/getting-started/).

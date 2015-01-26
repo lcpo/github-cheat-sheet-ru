@@ -1,4 +1,5 @@
 # GitHub Cheat Sheet
+Этот репозиторий содержит список скрытых и не очень функций Git и GitHub. 
 A collection of cool hidden and not so hidden features of Git and GitHub. This cheat sheet was inspired by [Zach Holman](https://github.com/holman)'s [Git and GitHub Secrets](http://www.confreaks.com/videos/1229-aloharuby2012-git-and-github-secrets) talk at Aloha Ruby Conference 2012 ([slides](https://speakerdeck.com/holman/git-and-github-secrets)) and his [More Git and GitHub Secrets](https://vimeo.com/72955426) talk at WDCNZ 2013 ([slides](https://speakerdeck.com/holman/more-git-and-github-secrets)).
 
 *Короткая ссылка: [`http://git.io/sheet`](http://git.io/sheet)*
@@ -6,6 +7,7 @@ A collection of cool hidden and not so hidden features of Git and GitHub. This c
 *На других языках: [English](README.md), [Русский](README.ru.md), [한국어](README.ko.md), [日本語](README.ja.md), [简体中文](README.zh-cn.md).*
 
 ## Table of Contents
+ - [Замечания к переводу](#замечания-к-переводу)
  - [GitHub](#github)
   - [Ignore Whitespace](#ignore-whitespace)
   - [Adjust Tab Space](#adjust-tab-space)
@@ -68,19 +70,23 @@ A collection of cool hidden and not so hidden features of Git and GitHub. This c
 
 ## Замечания к переводу
 Некоторые термины и названия переводились следующим образом:
+
 | English | Русский |
 | ------- | ------- |
-| diff | изменения |
-| commit | коммит |
 | branch | ветка |
-| merge | объединить |
+| collaborator | помощник *(владельца репозитория)* |
+| commit | коммит |
 | compare | сравнить |
-| pull | забирать *(изменения)* |
-| push | загружать *(изменения)* |
+| diff | изменения |
 | fork | форк |
 | Gist | *не переводится* |
+| Issue | *пока не переводится* |
+| merge | объединить |
+| Pull Request | запрос на изменение |
+| pull | забирать *(изменения)* |
+| push | загружать *(изменения)* |
 
-Перевод не является дословным, т.к. основная задача была — передать лишь общий смысл. Поэтому переводчик не претендует на безальтернативную точку зрения по правильности некоторых формулировок.
+Перевод не является дословным, т.к. основная задача была — передать лишь общий смысл. Поэтому переводчик не претендует на безальтернативную точку зрения по правильности некоторых формулировок. Наоборот приветвуется всякая конструктивная критика, а ещё лучше — сделайте посильный вклад в перевод текста с английского языка.
 
 ## GitHub
 ### Ignore Whitespace
@@ -102,7 +108,7 @@ A collection of cool hidden and not so hidden features of Git and GitHub. This c
 ![After, tab space example](http://i.imgur.com/70FL4H9.png)
 
 ### Commit History by Author
-Для просмотра всех коммитов в репозитории от одного автора, добавьте `?author={user}` к URLa.
+Для просмотра в репозитории всех коммитов от одного автора, добавьте `?author={user}` к URL.
 
 ```
 https://github.com/rails/rails/commits/master?author=dhh
@@ -193,9 +199,9 @@ https://github.com/rails/rails/compare/byroot:master...master
 
 ![Gist](http://i.imgur.com/VkKI1LC.png?1)
 
-Add `.pibb` to the end of any Gist URL ([like this](https://gist.github.com/tiimgreen/10545817.pibb)) in order to get the *HTML only* version suitable for embedding in any other site.
+Добавьте `.pibb` в конец URL Gist'а ([как здесь](https://gist.github.com/tiimgreen/10545817.pibb)), чтобы получить HTML версию, подходящую для вставки на другие сайты.
 
-С Gist'ом можно обращаться также как и с настоящим репозиторием, поэтому его можно клонировать следующей коммандой:
+С Gist'ом можно обращаться также как и с репозиторием, поэтому его можно клонировать следующей коммандой:
 
 ```bash
 $ git clone https://gist.github.com/tiimgreen/10545817
@@ -235,24 +241,24 @@ Location: https://github.com/...
 [*Узнайте больше о Git.io.*](https://github.com/blog/985-git-io-github-url-shortener)
 
 ### Keyboard Shortcuts
-When on a repository page, keyboard shortcuts allow you to navigate easily.
+Когда вы находитесь в репозитории, *быстрые клавиши* позволют лекго перемещаться по коду.
 
- - Pressing `t` will bring up a file explorer.
- - Pressing `w` will bring up the branch selector.
- - Pressing `s` will select the Command Bar.
- - Pressing `l` will edit labels on existing Issues.
+ - Нажмите `t`, чтобы открыть файловый менеджер.
+ - Нажмите `w`, чтобы открыть список веток.
+ - Нажмите `s`, чтобы прейти к строке поиска.
+ - Нажмите `l`, чтобы изменить метку существующего Issue.
  - Pressing `y` **when looking at a file** (e.g. `https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.md`) will change your URL to one which, in effect, freezes the page you are looking at. If this code changes, you will still be able to see what you saw at that current time.
 
-To see all of the shortcuts for the current page press `?`:
+Чтобы узнать, какие *быстрые клавиши* доступны на текущей странице, нажмите `?`:
 
 ![Keyboard shortcuts](http://i.imgur.com/y5ZfNEm.png)
 
-[*Read more about using the Command Bar.*](https://help.github.com/articles/using-the-command-bar)
+[*Узнайте больше об использовании командной строки.*](https://help.github.com/articles/using-the-command-bar)
 
 ### Line Highlighting in Repositories
-Either adding `#L52` to the end of a code file URL or simply clicking the line number will highlight that line number.
+Либо добавьте `#L52` в конец URL страницы с кодом, либо просто щёлкните на номер строки, чтобы выделить строку с этим номером.
 
-It also works with ranges, e.g. `#L53-L60`, to select ranges, hold `shift` and click two lines:
+Это работает также и с диапазонами, например, `#L53-L60`. Чтобы выбрать диапазон, щёлкните на двух строчках, удерживая `Shift`:
 
 ```
 https://github.com/rails/rails/blob/master/activemodel/lib/active_model.rb#L53-L60
@@ -261,7 +267,7 @@ https://github.com/rails/rails/blob/master/activemodel/lib/active_model.rb#L53-L
 ![Line Highlighting](http://i.imgur.com/8AhjrCz.png)
 
 ### Closing Issues via Commit Messages
-If a particular commit fixes an issue, any of the keywords `fix/fixes/fixed`, `close/closes/closed` or `resolve/resolves/resolved`, followed by the issue number, will close the issue once it is committed to the master branch.
+Иногда коммиты могут исправлять некоторые Issue. Ключевые слова `fix/fixes/fixed`, `close/closes/closed` или `resolve/resolves/resolved`, за которыми следует номер Issue, закрывают соответсвующий Issue, если они были в комментарии к коммиту в ветке `master`.
 
 ```bash
 $ git commit -m "Fix screwup, fixes #12"
@@ -271,26 +277,26 @@ This closes the issue and references the closing commit.
 
 ![Closing Repo](http://i.imgur.com/Uh1gZdx.png)
 
+[*Узнайте больше о закрытии Issue через комментарии к коммитам.*](https://help.github.com/articles/closing-issues-via-commit-messages)
 [*Read more about closing Issues via commit messages.*](https://help.github.com/articles/closing-issues-via-commit-messages)
 
 ### Cross-Link Issues
-If you want to link to another issue in the same repository, simple type hash `#` then the issue number, it will be auto-linked.
+Если вы хотите прикрепить ссылку на другой Issue в том же самом репозитории, просто напишите номер этого Issue, предварив его решёткой `#`.
 
-To link to an issue in another repository, `user_name/repo_name#ISSUE_NUMBER` e.g. `tiimgreen/toc#12`.
+Чтобы прикрепить ссылку на Issue в другом репозитории, напишите `{user}/{repo}#ISSUE_NUMBER`, например, `tiimgreen/toc#12`.
 
 ![Cross-Link Issues](https://camo.githubusercontent.com/447e39ab8d96b553cadc8d31799100190df230a8/68747470733a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f736563726574732f7265666572656e6365732e706e67)
 
 ### Locking Conversations
-Pull Requests and Issues can now be locked by owners or collaborators of the repo.
+Комментирование запросов на изменение и Issue может быть выключено владельцем репозитория или его помощниками.
 
 ![Lock conversation](https://cloud.githubusercontent.com/assets/2723/3221693/bf54dd44-f00d-11e3-8eb6-bb51e825bc2c.png)
 
-This means that users who are not collaborators on the proejct will no longer be able to comment.
+Это означает, что непривелигированные пользователи больше не смогут оствалять комментарии.
 
 ![Comments locked](https://cloud.githubusercontent.com/assets/2723/3221775/d6e513b0-f00e-11e3-9721-2131cb37c906.png)
 
-[*Read more about locking conversations.*](https://github.com/blog/1847-locking-conversations)
-
+[*Узнайте больше о выключении комментариев.*](https://github.com/blog/1847-locking-conversations)
 
 ### CI Status on Pull Requests
 If set up correctly, every time you receive a Pull Request, [Travis CI](https://travis-ci.org/) will build that Pull Request just like it would every time you make a new commit. Read more about how to [get started with Travis CI](http://docs.travis-ci.com/user/getting-started/).
@@ -327,7 +333,7 @@ Emojis can be added to Pull Requests, Issues, commit messages, etc. using `:name
 
 The full list of supported Emojis on GitHub can be found at [emoji-cheat-sheet.com](http://www.emoji-cheat-sheet.com/) or [scotch-io/All-Github-Emoji-Icons](https://github.com/scotch-io/All-Github-Emoji-Icons).
 
-The top 5 used Ejmojis on GitHub are:
+The top 5 used Emojis on GitHub are:
 
 1. `:shipit:`
 2. `:sparkles:`
@@ -345,7 +351,7 @@ Images and GIFs can be added to comments, READMEs etc.:
 Raw images from the repo can be used by calling them directly.:
 
 ```
-![Alt Text](https://github.com/(user)/(repo)/raw/master/path/to/image.gif)
+![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/image.gif)
 ```
 
 ![Peter don't care](http://www.sheawong.com/wp-content/uploads/2013/08/keephatin.gif)
@@ -840,6 +846,7 @@ Some useful aliases include:
 | `git st` | `git status -sb` | `git config --global alias.st 'status -sb'` |
 | `git tags` | `git tag -l` | `git config --global alias.tags 'tag -l'` |
 | `git branches` | `git branch -a` | `git config --global alias.branches 'branch -a'` |
+| `git cleanup` | `git branch --merged | grep -v '*' | xargs git branch -d` | `git config --global alias.cleanup "!git branch --merged | grep -v '*' | xargs git branch -d"` |
 | `git remotes` | `git remote -v` | `git config --global alias.remotes 'remote -v'` |
 | `git lg` | `git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --` | `git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"` |
 

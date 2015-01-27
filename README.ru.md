@@ -1,4 +1,5 @@
-# GitHub Cheat Sheet
+<!-- # GitHub Cheat Sheet -->
+# Шпаргалка по GitHub
 Этот репозиторий содержит список скрытых и не очень функций Git и GitHub. 
 A collection of cool hidden and not so hidden features of Git and GitHub. This cheat sheet was inspired by [Zach Holman](https://github.com/holman)'s [Git and GitHub Secrets](http://www.confreaks.com/videos/1229-aloharuby2012-git-and-github-secrets) talk at Aloha Ruby Conference 2012 ([slides](https://speakerdeck.com/holman/git-and-github-secrets)) and his [More Git and GitHub Secrets](https://vimeo.com/72955426) talk at WDCNZ 2013 ([slides](https://speakerdeck.com/holman/more-git-and-github-secrets)).
 
@@ -26,11 +27,11 @@ A collection of cool hidden and not so hidden features of Git and GitHub. This c
   - [Перекрёстные ссылки на Issues](#Перекрёстные-ссылки-на-issues)
   - [Отключение обсуждений](#Отключение-обсуждений)
   - [CI Status on Pull Requests](#ci-status-on-pull-requests)
-  - [Syntax Highlighting in Markdown Files](#syntax-highlighting-in-markdown-files)
-  - [Emojis](#emojis)
-  - [Images/GIFs](#imagesgifs)
+  - [Подсветка синтаксиса в Markdown файлах](#Подсветка-синтаксиса-в-markdown-файлах)
+  - [Смайлы](#Смайлы)
+  - [Изображения](#Изображения)
     - [Embedding Images in GitHub Wiki](#embedding-images-in-github-wiki)
-  - [Quick Quoting](#quick-quoting)
+  - [Быстрое цитирование](#Быстрое-цитирование)
   - [Pasting Clipboard Image to Comments](#pasting-clipboard-image-to-comments)
   - [Quick Licensing](#quick-licensing)
   - [Task Lists](#task-lists)
@@ -320,8 +321,9 @@ If set up correctly, every time you receive a Pull Request, [Travis CI](https://
 
 [*Read more about the commit status API.*](https://github.com/blog/1227-commit-status-api)
 
-### Syntax Highlighting in Markdown Files
-For example, to syntax highlight Ruby code in your Markdown files write:
+<!-- ### Syntax Highlighting in Markdown Files -->
+### Подсветка синтаксиса в Markdown файлах
+Блоки исходного кода с подсветкой синтаксиса в Markdown файлах оформляются так:
 
     ```ruby
     require 'tabbit'
@@ -330,7 +332,7 @@ For example, to syntax highlight Ruby code in your Markdown files write:
     puts table.to_s
     ```
 
-This will produce:
+Результат:
 
 ```ruby
 require 'tabbit'
@@ -339,16 +341,18 @@ table.add_row('Tim Green', 'tiimgreen@gmail.com')
 puts table.to_s
 ```
 
+GitHub испльзует [Linguist](https://github.com/github/linguist) для определения языка и подсветки синтаксиса.
 GitHub uses [Linguist](https://github.com/github/linguist) to perform language detection and syntax highlighting. You can find out which keywords are valid by perusing the [languages YAML file](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml).
 
-[*Read more about GitHub Flavored Markdown.*](https://help.github.com/articles/github-flavored-markdown)
+[*Узнайте больше о Markdown.*](https://help.github.com/articles/github-flavored-markdown)
 
-### Emojis
-Emojis can be added to Pull Requests, Issues, commit messages, etc. using `:name_of_emoji:`
+<!-- ### Emojis -->
+### Смайлы
+В запросах на изменение, в Issues, в сообщениях к коммитам и т.д. можно изпользовать смайлы вида `:name_of_emoji:`
 
-The full list of supported Emojis on GitHub can be found at [emoji-cheat-sheet.com](http://www.emoji-cheat-sheet.com/) or [scotch-io/All-Github-Emoji-Icons](https://github.com/scotch-io/All-Github-Emoji-Icons).
+Польный список смайлов, поддерживаемых GitHub, можно найти [здесь](http://www.emoji-cheat-sheet.com/) или [здесь](https://github.com/scotch-io/All-Github-Emoji-Icons).
 
-The top 5 used Emojis on GitHub are:
+5 самых популярных смайлов на GitHub:
 
 1. `:shipit:`
 2. `:sparkles:`
@@ -356,22 +360,23 @@ The top 5 used Emojis on GitHub are:
 4. `:+1:`
 5. `:clap:`
 
-### Images/GIFs
-Images and GIFs can be added to comments, READMEs etc.:
+<!-- ### Images/GIFs -->
+### Изображения
+Изображения (в т.ч. и gif-анимацию) можно вставить вот так:
 
 ```
-![Alt Text](http://www.sheawong.com/wp-content/uploads/2013/08/keephatin.gif)
+![Подсказка](http://www.sheawong.com/wp-content/uploads/2013/08/keephatin.gif)
 ```
 
-Raw images from the repo can be used by calling them directly.:
+Изображения напрямую из репозитория можно вставить так:
 
 ```
-![Alt Text](https://github.com/{user}/{repo}/raw/master/path/to/image.gif)
+![Подсказка](https://github.com/{user}/{repo}/raw/master/path/to/image.gif)
 ```
 
 ![Peter don't care](http://www.sheawong.com/wp-content/uploads/2013/08/keephatin.gif)
 
-All images are cached on GitHub, so if your host goes down, the image will remain available.
+Все изображения кэшируются, поэтому, если сервер с картинкой упадёт, она всё равно будет видна на GitHub.
 
 #### Embedding Images in GitHub Wiki
 There are multiple ways of embedding images in Wiki pages. There's the standard Markdown syntax (shown above). But there's also a syntax that allows things like specifying the height or width of the image:
@@ -384,12 +389,14 @@ Which produces:
 
 ![Just a screenshot](http://i.imgur.com/J5bMf7S.png)
 
-### Quick Quoting
+<!-- ### Quick Quoting -->
+### Быстрое цитирование
+В ленте комментариев можно выделить текст и нажать `r`, тогда этот текст скопируется в поле ответа как цитата.
 When on a comment thread and you want to quote something someone previously said, highlight the text and press `r`, this will copy it into your text box in the block-quote format.
 
 ![Quick Quote](https://f.cloud.github.com/assets/296432/124483/b0fa6204-6ef0-11e2-83c3-256c37fa7abc.gif)
 
-[*Read more about quick quoting.*](https://github.com/blog/1399-quick-quotes)
+[*Узнайте больше о быстром цитировании.*](https://github.com/blog/1399-quick-quotes)
 
 ### Pasting Clipboard Image to Comments
 

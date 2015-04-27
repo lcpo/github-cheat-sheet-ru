@@ -94,7 +94,7 @@ A collection of cool hidden and not so hidden features of Git and GitHub. This c
 ## GitHub
 <!-- ### Ignore Whitespace -->
 ### Игнорирование пробелов
-Добваьте `?w=1` к URL страницы при просмотре изменений, чтобы скрыть изменения только пробелов. Это позволит сконцентрироваться на коде, который был реально изменён.
+Добавив при просмотре изменений `?w=1` к URL страницы, вы скроете изменение пробелов. Это позволит сконцентрироваться на изменёном коде.
 
 ![Diff without whitespace](https://camo.githubusercontent.com/797184940defadec00393e6559b835358a863eeb/68747470733a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f626c6f672f323031312f736563726574732f776869746573706163652e706e67)
 
@@ -102,9 +102,9 @@ A collection of cool hidden and not so hidden features of Git and GitHub. This c
 
 <!-- ### Adjust Tab Space -->
 ### Настройка отступов
-Добавьте `?ts=4` к URL страницы при просмотре кода или изменений, чтобы задать собственную ширину табуляции. По умолчанию ширина установлена в 8 пробелов. Число после `ts` может быть изменено с учётом ваших предпочтений. Это не работает с Gists и сырыми файлами, но вы можете установить [расширение](https://chrome.google.com/webstore/detail/github-tab-size/ofjbgncegkdemndciafljngjbdpfmbkn) для Chrome чтобы исправить это.
+Чтобы задать собственную ширину табуляции, добавьте `?ts=4` к URL страницы при просмотре изменений. Ширина по умолчанию 8 пробелов.
 
-Так выгдядит исходный файл без `?ts=4`:
+Так выгдядит исходный код на Go до добавления `?ts=4`:
 
 ![Before, tab space example](http://i.imgur.com/GIT1Fr0.png)
 
@@ -114,7 +114,7 @@ A collection of cool hidden and not so hidden features of Git and GitHub. This c
 
 <!-- ### Commit History by Author -->
 ### История коммитов от одного автора
-Для просмотра в репозитории всех коммитов от одного автора, добавьте `?author={user}` к URL.
+Чтобы просмотреть в репозитории все коммиты от одного автора, добавьте `?author={user}` к URL.
 
 ```
 https://github.com/rails/rails/commits/master?author=dhh

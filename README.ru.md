@@ -33,7 +33,7 @@ A collection of cool hidden and not so hidden features of Git and GitHub. This c
     - [Embedding Images in GitHub Wiki](#embedding-images-in-github-wiki)
   - [Быстрое цитирование](#Быстрое-цитирование)
   - [Pasting Clipboard Image to Comments](#pasting-clipboard-image-to-comments)
-  - [Quick Licensing](#quick-licensing)
+  - [Быстрое добавление лицензии](#Быстрое-добавление-лицензии)
   - [Task Lists](#task-lists)
     - [Task Lists in Markdown Documents](#task-lists-in-markdown-documents)
   - [Relative Links](#relative-links)
@@ -408,16 +408,16 @@ After taking a screenshot and adding it to the clipboard (mac: `cmd-ctrl-shift-4
 
 [*Read more about issue attachments.*](https://help.github.com/articles/issue-attachments)
 
-### Quick Licensing
-When creating a repository, GitHub gives you the option of adding in a pre-made license:
+### Быстрое добавление лицензии
+При создании репозитория, GitHub даёт возможность добавить готовую лицензию:
 
 ![License](http://i.imgur.com/Chqj4Fg.png)
 
-You can also add them to existing repositories by creating a new file through the web interface. When the name `LICENSE` is typed in you will get an option to use a template:
+Вы также можете добавить лицензию создав новый файл через веб интерфейс. При создании файла с именем `LICENSE` у вас появится опция использовать один из готовых шаблонов.
 
 ![License](http://i.imgur.com/fTjQict.png)
 
-Also works for `.gitignore`.
+Также работает для `.gitignore`.
 
 [*Read more about open source licensing.*](https://help.github.com/articles/open-source-licensing)
 

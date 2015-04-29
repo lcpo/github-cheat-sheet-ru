@@ -53,10 +53,11 @@ A collection of cool hidden and not so hidden features of Git and GitHub. This c
   - [GitHub Resources](#github-resources)
     - [GitHub Talks](#github-talks)
  - [Git](#git)
+  - [Remove All Deleted Files from the Working Tree](#remove-all-deleted-files-from-the-working-tree)
   - [Previous Branch](#previous-branch)
   - [Stripspace](#stripspace)
   - [Checking out Pull Requests](#checking-out-pull-requests)
-  - [Empty Commits :trollface:](#empty-commits-trollface)
+  - [Empty Commits](#empty-commits)
   - [Styled Git Status](#styled-git-status)
   - [Styled Git Log](#styled-git-log)
   - [Git Query](#git-query)
@@ -102,7 +103,7 @@ A collection of cool hidden and not so hidden features of Git and GitHub. This c
 
 <!-- ### Adjust Tab Space -->
 ### Настройка отступов
-Чтобы задать собственную ширину табуляции, добавьте `?ts=4` к URL страницы при просмотре изменений. Ширина по умолчанию 8 пробелов.
+Чтобы задать собственную ширину табуляции, добавьте `?ts=4` к URL страницы при просмотре изменений. Ширина по умолчанию 8 пробелов. Число после `ts` может быть изменено с учётом ваших предпочтений. Это не работает с Gists и сырыми файлами. Чтобы исправить это вы можете установить расширение для [Chrome](https://chrome.google.com/webstore/detail/github-tab-size/ofjbgncegkdemndciafljngjbdpfmbkn) или [Opera](https://addons.opera.com/en/extensions/details/github-tab-size/).
 
 Так выгдядит исходный код на Go до добавления `?ts=4`:
 
@@ -257,7 +258,7 @@ Location: https://github.com/...
 
  - Нажмите `t`, чтобы открыть файловый менеджер.
  - Нажмите `w`, чтобы открыть список веток.
- - Нажмите `s`, чтобы прейти к строке поиска.
+ - Нажмите `s`, чтобы прейти к строке поиска по текущему репозиторию. Нажмите Backspace, чтобы убрать плашку "This repository" и осуществить поиск по всему сайту.
  - Нажмите `l`, чтобы изменить метку существующего Issue.
  - Pressing `y` **when looking at a file** (e.g. `https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.md`) will change your URL to one which, in effect, freezes the page you are looking at. If this code changes, you will still be able to see what you saw at that current time.
 
@@ -265,7 +266,7 @@ Location: https://github.com/...
 
 ![Keyboard shortcuts](http://i.imgur.com/y5ZfNEm.png)
 
-[*Узнайте больше об использовании командной строки.*](https://help.github.com/articles/using-the-command-bar)
+[*Узнайте больше о синтаксисе поисковой строки.*](https://help.github.com/articles/search-syntax/)
 
 <!-- ### Line Highlighting in Repositories -->
 ### Выделение строк кода
@@ -348,7 +349,7 @@ GitHub uses [Linguist](https://github.com/github/linguist) to perform language d
 
 <!-- ### Emojis -->
 ### Смайлы
-В запросах на изменение, в Issues, в сообщениях к коммитам и т.д. можно изпользовать смайлы вида `:name_of_emoji:`
+В запросах на изменение, в Issues, в сообщениях к коммитам, в описаниях репозиториев и т.п. можно изпользовать смайлы вида `:name_of_emoji:`.
 
 Польный список смайлов, поддерживаемых GitHub, можно найти [здесь](http://www.emoji-cheat-sheet.com/) или [здесь](https://github.com/scotch-io/All-Github-Emoji-Icons).
 
@@ -622,6 +623,33 @@ GitHubs icons (Octicons) have now been open sourced.
 | More Git and GitHub Secrets | https://www.youtube.com/watch?v=p50xsL-iVgU |
 
 ## Git
+### Remove All Deleted Files from the Working Tree
+When you delete a lot of files using `/bin/rm` you can use the following command to remove them from the working tree and from the index, eliminating the need to remove each one individually:
+
+```bash
+$ git rm $(git ls-files -d)
+```
+
+For example:
+
+```bash
+$ git status
+On branch master
+Changes not staged for commit:
+	deleted:    a
+	deleted:    c
+
+$ git rm $(git ls-files -d)
+rm 'a'
+rm 'c'
+
+$ git status
+On branch master
+Changes to be committed:
+	deleted:    a
+	deleted:    c
+```
+
 ### Previous Branch
 To move to the previous branch in Git:
 
@@ -708,7 +736,7 @@ git checkout pr/42
 
 [*Read more about checking out pull requests locally.*](https://help.github.com/articles/checking-out-pull-requests-locally)
 
-### Empty Commits :trollface:
+### Empty Commits
 Commits can be pushed with no code changes by adding `--allow-empty`:
 
 ```bash
@@ -924,6 +952,7 @@ $ git config --global color.ui 1
 | Git for Computer Scientists | http://eagain.net/articles/git-for-computer-scientists/ |
 | Git Magic | http://www-cs-students.stanford.edu/~blynn/gitmagic/ |
 | GitHub Training Kit | http://training.github.com/kit |
+| Git Visualization Playground | http://onlywei.github.io/explain-git-with-d3/#freeplay |
 
 #### Git Books
 | Title | Link |
